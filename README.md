@@ -1,0 +1,3 @@
+The asynchronous FIFO supports different read and write rates. The depth of the FIFO is determined by assuming the burst in write action is continuous. Then, the minimum size of the FIFO can be determined if data are read at the maximum speed, that is, one data consumed each read clock. Assuming the write burst size is 80, and the write and read clock period ratio is $\frac{8}{10}$, the data inside the buffer should at least be:
+$$80-80\times\frac{8}{10}=16$$
+The actual minimum size can be slightly larger, since the FIFO full logic determines whether it is full based on the synchronized read pointer, and is therefore delayed.
